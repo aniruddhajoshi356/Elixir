@@ -1,0 +1,159 @@
+# Elixir Practice
+
+## Strings
+
+```elixir
+name="Octallium"
+```
+
+```elixir
+"Octallium"=name
+```
+
+```elixir
+<<head,rest::binary>> = name
+head
+```
+
+```elixir
+rest
+```
+
+```elixir
+head==?O
+```
+
+```elixir
+<<"Oct", rest::binary>>=name
+rest
+```
+
+## CharList
+
+```elixir
+greet = 'Hello'
+```
+
+```elixir
+greet ++ ' Everyone'
+```
+
+```elixir
+is_list(greet)
+```
+
+## List
+
+```elixir
+ls = ["a","b","c"]
+```
+
+```elixir
+Enum.at(ls,0)
+```
+
+```elixir
+[one,two,three]=ls
+one
+```
+
+```elixir
+[_,middle,_]=ls
+middle
+#Ignores any value in between
+```
+
+```elixir
+[h|t] = ls
+h
+```
+
+```elixir
+t
+```
+
+## Tuple
+
+```elixir
+tp={1,2}
+```
+
+```elixir
+{a,b}=tp
+```
+
+```elixir
+a
+```
+
+```elixir
+{:reply,msg}={:reply,"Not Found"}
+```
+
+## Keyword List
+
+```elixir
+kls=[a: 1,b: 2]
+```
+
+```elixir
+[{:a,1},{:b,2}]=[a: 1,b: 2]
+```
+
+```elixir
+kls[:a]
+```
+
+## Map
+
+```elixir
+my_map=%{a: 1,b: 2}
+```
+
+```elixir
+%{a: first}=my_map
+first
+```
+
+```elixir
+%{a: first, b: second}
+second
+```
+
+```elixir
+map2 = %{"a" => 1, "b" => 2}
+```
+
+```elixir
+%{"a" => first1} = map2
+first1
+
+```
+
+```elixir
+#Updates the map ande extracts the updated elements value 
+my_map = %{my_map | a: 5}
+%{a: fir} = my_map
+fir
+```
+
+## Struct
+
+```elixir
+defmodule User do
+  defstruct username: "", email: "", age: nil
+end
+```
+
+```elixir
+user1 = %User{username: "Ram", email: "abc@gmail.com", age: 21}
+```
+
+```elixir
+%{username: un} = user1
+un
+```
+
+```elixir
+user1 = %{user1 | email: "ram@gmail.com"}
+```
