@@ -49,4 +49,12 @@ defmodule Sample.Structs.SevenWonders do
   def name_country_keyword_list(wonders) do
     Enum.reduce(wonders, [], fn wonder, acc -> [{String.to_atom(wonder.name), wonder.country} | acc] end )
   end
+
+  @spec asian_wonder_names([SevenWonders.t()]) :: [String.t()]
+  def asian_wonder_names(wonders) do
+    for %SevenWonders{country: country, name: name} <- wonders,
+       country in ["India", "China"] do
+      name
+    end
+  end
 end
